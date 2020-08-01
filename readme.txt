@@ -3,7 +3,7 @@ Tags: gutenberg, fullscreen
 Contributors: wordpressdotorg, Clorith
 Requires at least: 5.3
 Requires PHP: 5.6
-Tested up to: 5.4
+Tested up to: 5.5
 Stable tag: 1.0.1
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
