@@ -41,11 +41,6 @@ wp.data.subscribe( function() {
 		}
 	}
 
-	console.log( { data } );
-	console.log( { cbfmLastMode } );
-	console.log( { cbfmUserSettings } );
-	console.log( { cbfmCurrentMode } );
-
 	if ( Object.keys( data ).length >= 1 ) {
 		wp.apiFetch( {
 			path: '/cbfm-manage/v1/save',

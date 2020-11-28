@@ -1,6 +1,6 @@
 === Persistent blockeditor settings ===
-Tags: gutenberg, fullscreen
-Contributors: wordpressdotorg, Clorith
+Tags: gutenberg, block-editor, fullscreen, editor settings
+Contributors: Clorith
 Requires at least: 5.3
 Requires PHP: 5.6
 Tested up to: 5.6
