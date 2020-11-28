@@ -13,17 +13,37 @@ class CBFM_Profile {
 			return;
 		}
 
-		update_user_meta( $user_id, 'cbfm_default_state', ( isset( $_POST['cbfm-default-state'] ) ? 'true' : 'false' ) );
+		$settings = get_user_meta( get_current_user_id(), 'cbfm_default_state', true );
+
+		// Upgrade older settings users.
+		if ( ! is_array( $settings ) ) {
+			$settings = array(
+				'fullscreenMode' => ( isset( $_POST['cbfm-default-state'] ) ? 'true' : 'false' ),
+			);
+		} else {
+		    $settings['fullscreenMode'] = ( isset( $_POST['cbfm-default-state'] ) ? 'true' : 'false' );
+        }
+
+		update_user_meta( $user_id, 'cbfm_default_state', $settings );
 	}
 
 	public function add_options_field( $profileuser ) {
+		$settings = get_user_meta( get_current_user_id(), 'cbfm_default_state', true );
+
+		if ( ! is_array( $settings ) ) {
+			$settings = array(
+				'fullscreenMode' => $settings,
+			);
+		}
+
+		var_dump( $settings );
 		?>
 
 		<tr class="cbfm-default-state">
 			<th scope="row"><?php _e( 'Fullscreen Editing', 'blockeditor-fullscreen-mode-control' ); ?></th>
 			<td>
 				<label for="cbfm_default_state">
-					<input name="cbfm-default-state" type="checkbox" id="cbfm_default_state" value="true"<?php checked( "true", get_user_meta( $profileuser->ID, 'cbfm_default_state', true ) ); ?> />
+					<input name="cbfm-default-state" type="checkbox" id="cbfm_default_state" value="true"<?php checked( "true", $settings['fullscreenMode'] ); ?> />
 					<?php _e( 'Enable fullscreen editing', 'blockeditor-fullscreen-mode-control' ); ?>
 				</label>
                 <small><?php _e( '(this setting can also be toggled with the fullscreen option inside the block editor)', 'blockeditor-fullscreen-mode-control' ); ?></small>

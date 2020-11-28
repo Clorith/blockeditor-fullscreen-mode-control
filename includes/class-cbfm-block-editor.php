@@ -15,12 +15,19 @@ class CBFM_Block_Editor {
 			true
 		);
 
+		$settings = get_user_meta( get_current_user_id(), 'cbfm_default_state', true );
+
+		if ( ! is_array( $settings ) ) {
+			$settings = array(
+				'fullscreenMode' => $settings,
+				'welcomeGuide'   => 'false', // Auto-set the welcome message, if you've made it ot the plugin, always skip this.
+			);
+		}
+
 		wp_localize_script(
 			'cbfm-manager',
 			'cbfm_manager',
-			array(
-				'fullscreen' => get_user_meta( get_current_user_id(), 'cbfm_default_state', true ),
-			)
+			$settings
 		);
 	}
 

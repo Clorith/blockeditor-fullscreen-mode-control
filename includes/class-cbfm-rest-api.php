@@ -21,7 +21,38 @@ class CBFM_Rest_API {
 	}
 
 	public function save_fullscreen_view( $request ) {
-		update_user_meta( get_current_user_id(), 'cbfm_default_state', ( 'true' === $request->get_param( 'fullscreen' ) ? 'true' : 'false' ) );
+		$features = array(
+			'fixedToolbar',
+			'welcomeGuide',
+			'fullscreenMode',
+			'showIconLabels',
+			'themeStyles',
+			'showInserterHelpPanel',
+			'focusMode',
+			'reducedUI',
+		);
+
+		$settings = get_user_meta( get_current_user_id(), 'cbfm_default_state', true );
+
+		// Upgrade older settings users.
+		if ( ! is_array( $settings ) ) {
+			$settings = array(
+				'fullscreenMode' => $settings,
+			);
+		}
+
+		$params = $request->get_params();
+
+		foreach ( $params as $param => $value ) {
+			// Skip unwatched parameters.
+			if ( ! in_array( $param, $features ) ) {
+				continue;
+			}
+
+			$settings[ $param ] = ( true === $value ? 'true' : 'false' );
+		}
+
+		update_user_meta( get_current_user_id(), 'cbfm_default_state', $settings );
 
 		return true;
 	}
