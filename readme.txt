@@ -1,28 +1,22 @@
-=== Blockeditor Fullscreen Mode Control ===
+=== Persistent blockeditor settings ===
 Tags: gutenberg, fullscreen
 Contributors: wordpressdotorg, Clorith
 Requires at least: 5.3
 Requires PHP: 5.6
-Tested up to: 5.5
-Stable tag: 1.0.1
+Tested up to: 5.6
+Stable tag: 1.2.0
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Manage the behavior of the fullscreen editing experience in the block editor
+Persistent editor settings between devices.
 
 == Description ==
 
-Fullscreen editing was introduced as the default editing mode in WordPress 5.4.
+This plugin provides a means of persisting editor feature settings (like fullscreen editing, the welcome message, focused mode, and os on)
+between devices, or if you clear your browsers local storage (a feature automatically performed by Apple devices very frequently).
 
-This is understandably not what everyone wants, so this plugin makes the default remain as it was prior to this,
-making the fullscreen editing an opt-in feature.
-
-As a side feature, some browsers unfortunately do not properly keep stored settings the way things are set up
-right now, this plugin provides you a per-user profile option to enable or disable the fullscreen editing which
-persists between devices and sessions.
-
-You will still be able to change the editing mode for individual posts while you are working on them the usual way,
-via the ellipsis menu in the top corner of your editor, this plugin only helps save that value in a persistent manner.
+Previously, the plugin was known as *Blockeditor Fullscreen Mode Control*, and only handled the fullscreen mode, but over
+time there has presented it self a need to maintain other editor settings in usermeta as well.
 
 == Frequently asked questions ==
 
@@ -30,6 +24,9 @@ via the ellipsis menu in the top corner of your editor, this plugin only helps s
 Yes, you can network activate the plugin to have the functionality be instantly available to all users of your network.
 
 == Changelog ==
+
+= v1.2.0 - 2020-11-28 =
+* Add support for other stateful settings (welcome message, focus mode, fixed toolbar and more)
 
 = v1.0.1 =
 * Clarified some strings

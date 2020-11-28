@@ -1,9 +1,9 @@
 <?php
 /*
- * Plugin Name: Blockeditor Fullscreen Mode Control
+ * Plugin Name: Persistent blockeditor settings
  * Plugin URI: https://wordpress.org/plugins/blockeditor-fullscreen-mode-control
- * Description: Manage the behavior of the fullscreen editing experience in the block editor
- * Version: 1.0.1
+ * Description: Persistent editor settings between devices.
+ * Version: 1.2.0
  * Author: Clorith
  * Author URI: https://wordpress.org
  * Network: true
