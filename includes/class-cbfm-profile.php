@@ -35,8 +35,6 @@ class CBFM_Profile {
 				'fullscreenMode' => $settings,
 			);
 		}
-
-		var_dump( $settings );
 		?>
 
 		<tr class="cbfm-default-state">
