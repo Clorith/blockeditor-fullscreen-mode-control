@@ -24,41 +24,66 @@ class CBFM_Profile {
 	 */
     public function prepare_settings_fields() {
 	    $this->settings_fields = array(
-		    'fixedToolbar'   => array(
+		    'fixedToolbar'         => array(
 			    'title'    => esc_html__( 'Fixed toolbar', 'blockeditor-fullscreen-mode-control' ),
 			    'label'    => esc_html__( 'Enable the fixed toolbar', 'blockeditor-fullscreen-mode-control' ),
 			    'helptext' => esc_html__( '(Access all block and document tools in a single place)', 'blockeditor-fullscreen-mode-control' ),
+			    'default'  => 'false',
 		    ),
-		    'welcomeGuide'   => array(
+		    'welcomeGuide'         => array(
 			    'title'    => esc_html__( 'Welcome guide', 'blockeditor-fullscreen-mode-control' ),
 			    'label'    => esc_html__( 'Display the new user welcome guide', 'blockeditor-fullscreen-mode-control' ),
 			    'helptext' => esc_html__( '(Not published anything in a while, take the welcome tour again)', 'blockeditor-fullscreen-mode-control' ),
+			    'default'  => 'true',
 		    ),
-		    'fullscreenMode' => array(
+		    'fullscreenMode'       => array(
 			    'title'    => esc_html__( 'Fullscreen Editing', 'blockeditor-fullscreen-mode-control' ),
 			    'label'    => esc_html__( 'Enable fullscreen editing', 'blockeditor-fullscreen-mode-control' ),
 			    'helptext' => esc_html__( '(Work without distraction)', 'blockeditor-fullscreen-mode-control' ),
+			    'default'  => 'true',
 		    ),
-		    'showIconLabels' => array(
+		    'showIconLabels'       => array(
 			    'title'    => esc_html__( 'Button labels', 'blockeditor-fullscreen-mode-control' ),
 			    'label'    => esc_html__( 'Display button labels', 'blockeditor-fullscreen-mode-control' ),
 			    'helptext' => esc_html__( '(Show texts instead of icons in the toolbar)', 'blockeditor-fullscreen-mode-control' ),
+			    'default'  => 'false',
 		    ),
-		    'themeStyles'    => array(
+		    'themeStyles'          => array(
 			    'title'    => esc_html__( 'Theme styles', 'blockeditor-fullscreen-mode-control' ),
 			    'label'    => esc_html__( 'Use theme styles', 'blockeditor-fullscreen-mode-control' ),
 			    'helptext' => esc_html__( '(Make the editor look like your theme)', 'blockeditor-fullscreen-mode-control' ),
+			    'default'  => 'true',
 		    ),
-		    'focusMode'      => array(
+		    'focusMode'            => array(
 			    'title'    => esc_html__( 'Spotlight mode', 'blockeditor-fullscreen-mode-control' ),
 			    'label'    => esc_html__( 'Enable spotlight mode', 'blockeditor-fullscreen-mode-control' ),
 			    'helptext' => esc_html__( '(Focus on one block at a time)', 'blockeditor-fullscreen-mode-control' ),
+			    'default'  => 'false',
 		    ),
-		    'reducedUI'      => array(
+		    'reducedUI'            => array(
 			    'title'    => esc_html__( 'Reduced interface', 'blockeditor-fullscreen-mode-control' ),
 			    'label'    => esc_html__( 'Enable reduced interface', 'blockeditor-fullscreen-mode-control' ),
 			    'helptext' => esc_html__( '(Compacts options and outlines in the toolbar)', 'blockeditor-fullscreen-mode-control' ),
+			    'default'  => 'false',
 		    ),
+		    'showBlockBreadcrumbs' => array(
+			    'title'    => esc_html__( 'Block breadcrumbs', 'blockeditor-fullscreen-mode-control' ),
+			    'label'    => esc_html__( 'Display block breadcrumbs', 'blockeditor-fullscreen-mode-control' ),
+			    'helptext' => esc_html__( '(Shows block breadcrumbs at the bottom of the editor)', 'blockeditor-fullscreen-mode-control' ),
+			    'default'  => 'true',
+		    ),
+		    'mostUsedBlocks'       => array(
+			    'title'    => esc_html__( 'Most used blocks', '' ),
+			    'label'    => esc_html__( 'Show most used blocks', '' ),
+			    'helptext' => esc_html__( '(Places the most frequent blocks in the block library)', '' ),
+			    'default'  => 'false',
+		    ),
+		    'keepCaretInsideBlock' => array(
+			    'title'    => esc_html__( 'Caret positioning', '' ),
+			    'label'    => esc_html__( 'Contain text cursor inside block', '' ),
+			    'helptext' => esc_html__( '(Aids screen readers by stopping text caret from leaving blocks)', '' ),
+			    'default'  => 'false',
+		    )
 	    );
     }
 
@@ -108,7 +133,7 @@ class CBFM_Profile {
                 <th scope="row"><?php echo $field['title']; ?></th>
                 <td>
                     <label for="cbfm-<?php echo esc_attr( $slug ); ?>">
-                        <input name="cbfm-<?php echo esc_attr( $slug ); ?>" type="checkbox" id="cbfm-<?php echo esc_attr( $slug ); ?>" value="true"<?php checked( "true", $settings[ $slug ] ); ?> />
+                        <input name="cbfm-<?php echo esc_attr( $slug ); ?>" type="checkbox" id="cbfm-<?php echo esc_attr( $slug ); ?>" value="true"<?php checked( "true", ( isset( $settings[ $slug ] ) && ! empty( $settings[ $slug ] ) ? $settings[ $slug ] : $field['default'] ) ); ?> />
                         <?php echo $field['label']; ?>
                     </label>
 

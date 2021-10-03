@@ -7,6 +7,9 @@ const cbfmUserSettings = [
 	'showInserterHelpPanel',
 	'focusMode',
 	'reducedUI',
+	'showBlockBreadcrumbs',
+	'mostUsedBlocks',
+	'keepCaretInsideBlock',
 ];
 
 var cbfmLoop,

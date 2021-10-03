@@ -30,6 +30,9 @@ class CBFM_Rest_API {
 			'showInserterHelpPanel',
 			'focusMode',
 			'reducedUI',
+			'showBlockBreadcrumbs',
+			'mostUsedBlocks',
+			'keepCaretInsideBlock',
 		);
 
 		$settings = get_user_meta( get_current_user_id(), 'cbfm_default_state', true );
