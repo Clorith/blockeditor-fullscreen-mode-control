@@ -1,8 +1,8 @@
 <?php
 /*
- * Plugin Name: Persistent blockeditor settings
+ * Plugin Name: Persistent block editor settings
  * Plugin URI: https://wordpress.org/plugins/blockeditor-fullscreen-mode-control
- * Description: Persistent editor settings between devices.
+ * Description: Remember your editor settings across devices and editing sessions.
  * Version: 1.2.0
  * Author: Clorith
  * Author URI: https://wordpress.org
