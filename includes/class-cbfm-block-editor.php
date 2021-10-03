@@ -11,7 +11,7 @@ class CBFM_Block_Editor {
 			'cbfm-manager',
 			trailingslashit( CBFM_PLUGINS_BASE ) . 'assets/js/fullscreen.js',
 			array(),
-			null,
+			'1.3.0',
 			true
 		);
 
