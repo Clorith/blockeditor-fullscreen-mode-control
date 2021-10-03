@@ -12,7 +12,7 @@ class CBFM_Rest_API {
 			'/save',
 			array(
 				'methods' => 'POST',
-				'callback' => array( $this, 'save_fullscreen_view' ),
+				'callback' => array( $this, 'save_editor_preference' ),
 				'permission_callback' => function() {
 					return is_user_logged_in();
 				},
@@ -20,7 +20,7 @@ class CBFM_Rest_API {
 		);
 	}
 
-	public function save_fullscreen_view( $request ) {
+	public function save_editor_preference( $request ) {
 		$features = array(
 			'fixedToolbar',
 			'welcomeGuide',
