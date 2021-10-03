@@ -73,15 +73,15 @@ class CBFM_Profile {
 			    'default'  => 'true',
 		    ),
 		    'mostUsedBlocks'       => array(
-			    'title'    => esc_html__( 'Most used blocks', '' ),
-			    'label'    => esc_html__( 'Show most used blocks', '' ),
-			    'helptext' => esc_html__( '(Places the most frequent blocks in the block library)', '' ),
+			    'title'    => esc_html__( 'Most used blocks', 'blockeditor-fullscreen-mode-control' ),
+			    'label'    => esc_html__( 'Show most used blocks', 'blockeditor-fullscreen-mode-control' ),
+			    'helptext' => esc_html__( '(Places the most frequent blocks in the block library)', 'blockeditor-fullscreen-mode-control' ),
 			    'default'  => 'false',
 		    ),
 		    'keepCaretInsideBlock' => array(
-			    'title'    => esc_html__( 'Caret positioning', '' ),
-			    'label'    => esc_html__( 'Contain text cursor inside block', '' ),
-			    'helptext' => esc_html__( '(Aids screen readers by stopping text caret from leaving blocks)', '' ),
+			    'title'    => esc_html__( 'Caret positioning', 'blockeditor-fullscreen-mode-control' ),
+			    'label'    => esc_html__( 'Contain text cursor inside block', 'blockeditor-fullscreen-mode-control' ),
+			    'helptext' => esc_html__( '(Aids screen readers by stopping text caret from leaving blocks)', 'blockeditor-fullscreen-mode-control' ),
 			    'default'  => 'false',
 		    )
 	    );
