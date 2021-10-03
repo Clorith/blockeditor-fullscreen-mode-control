@@ -1,5 +1,5 @@
-=== Persistent blockeditor settings ===
-Tags: gutenberg, block-editor, fullscreen, editor settings
+=== Persistent block editor settings ===
+Tags: gutenberg, block-editor, block editor, fullscreen, editor settings
 Contributors: Clorith
 Requires at least: 5.3
 Requires PHP: 5.6
@@ -8,15 +8,22 @@ Stable tag: 1.2.0
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Persistent editor settings between devices.
+Remember your editor settings across devices and editing sessions.
 
 == Description ==
 
-This plugin provides a means of persisting editor feature settings (like fullscreen editing, the welcome message, focused mode, and os on)
-between devices, or if you clear your browsers local storage (a feature automatically performed by Apple devices very frequently).
+Tired of losing your block editor settings when you change devices, or your local browsing data is cleared? Then this is the plugin for you!
+
+The block editor stores all settings in what is known as "localStorage", this means your preferences do not carry over between your phone, tablet, or computer.
+This also means that if you regularly clear out old cookies and browser data, your preferences may be lost (some browsers even do this automatically at set intervals, Safari, for example, is known to do this).
+
+The plugin simply requires you to activate it, and it will remember your editor settings without any other interactions.
+In addition, it also makes it possible to change your editor preferences via your user profile if you prefer this approach.
+
+---
 
 Previously, the plugin was known as *Blockeditor Fullscreen Mode Control*, and only handled the fullscreen mode, but over
-time there has presented it self a need to maintain other editor settings in usermeta as well.
+time there has presented itself a need to maintain persistent editor settings across sessions and devices for other elements as well.
 
 == Frequently asked questions ==
 
